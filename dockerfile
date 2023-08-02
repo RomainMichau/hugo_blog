@@ -2,7 +2,7 @@ FROM klakegg/hugo:0.107.0-ext-alpine as build
 ARG HUGO_FLAGS=""
 WORKDIR /webapp
 COPY ./ .
-RUN hugo ${HUGO_FLAGS}
+RUN hugo ${DRAFT_PARAM}
 
 
 FROM nginx
