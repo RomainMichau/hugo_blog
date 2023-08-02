@@ -1,7 +1,7 @@
 FROM klakegg/hugo:0.107.0-ext-alpine as build
 WORKDIR /webapp
 COPY ./ .
-RUN hugo -D 
+RUN hugo
 
 
 FROM nginx
