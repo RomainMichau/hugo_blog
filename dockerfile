@@ -5,5 +5,5 @@ COPY ./ .
 RUN hugo ${HUGO_FLAGS}
 
 
-FROM nginx
+FROM nginx:stable-alpine3.17-slim
 COPY --from=build /webapp/public /usr/share/nginx/html
