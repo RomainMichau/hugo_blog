@@ -5,6 +5,7 @@ name: Demo Push
 # - A push is made to a branch called `master` or `seed`
 # - A tag starting with "v" is created
 # - A pull request is created or updated
+
 on:
   push:
     branches:
