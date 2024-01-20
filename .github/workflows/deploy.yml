@@ -18,6 +18,7 @@ env:
 jobs:
   # This pushes the image to GitHub Packages.
   push:
+    if: github.ref == 'refs/heads/master'
     runs-on: self-hosted
     permissions:
       packages: write
@@ -26,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: 'recursive'
+          submodules: ''
 
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
